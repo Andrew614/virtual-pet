@@ -7,13 +7,25 @@ import org.wecancodeit.VirtualPet;
 public class VirtualPetTest {
 
     @Test
-    public void shouldTick() {
-        VirtualPet pet = new VirtualPet("Kendrick");
+    public void shouldBeAbleToCreatePet() {
+        VirtualPet pet = new VirtualPet(null);
+    }
 
-        int initialHunger = pet.getHunger();
-        pet.tick();
-        int hungerAfterTick = pet.getHunger();
+    @Test
+    public void petShouldHaveName() {
+        VirtualPet underTest = new VirtualPet("Jeff");
 
-        assertEquals(initialHunger + 10, hungerAfterTick);
+        String expected = underTest.getName();
+
+        assertEquals(expected, "Jeff");
+    }
+
+    @Test
+    public void shouldHaveDefaultHunger() {
+        VirtualPet underTest = new VirtualPet("Steve");
+
+        int expected = underTest.getHunger;
+
+        assertEquals(expected, 10);
     }
 }
