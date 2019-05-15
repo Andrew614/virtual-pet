@@ -18,11 +18,27 @@ public class VirtualPetTest {
         assertEquals(expected, "Jeff");
     }
 
-    //@Test
+    @Test
     public void shouldHaveDefaultHunger() {
         VirtualPet underTest = new VirtualPet("Steve");
 
-        int expected = underTest.getHunger;
+        int expected = underTest.getHunger();
+
+        assertEquals(expected, 10);
+    }
+    @Test
+    public void shouldHaveDefaultBoredom() {
+        VirtualPet underTest = new VirtualPet("Steve");
+
+        int expected = underTest.getHunger();
+
+        assertEquals(expected, 10);
+    }
+    @Test
+    public void shouldHaveDefaultThirst() {
+        VirtualPet underTest = new VirtualPet("Steve");
+
+        int expected = underTest.getHunger();
 
         assertEquals(expected, 10);
     }
