@@ -30,12 +30,13 @@ public class VirtualPet {
 
 	public void setPetName(String setName) {
 		petName = setName;
-		
+
 	}
+
 	public void tick() {
-		hunger = (hunger + 10);
-		boredom = (boredom + 10);
-		thirst = (thirst + 10);
-		
+		hunger +=  10;
+		boredom +=  10;
+		thirst += 10;
+
 	}
 }

@@ -82,8 +82,8 @@ public class VirtualPetTest {
 		VirtualPet pet = new VirtualPet("Kendrick");
 
 		int initialHunger = pet.getHunger();
-		pet.tick();
-		int HungerAfterTick = pet.getHunger();
+		pet.feed();
+		int HungerAfterFeed = pet.getHunger();
 
 		assertEquals(initialHunger - 10, HungerAfterTick);
 
