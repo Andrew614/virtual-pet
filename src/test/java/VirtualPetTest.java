@@ -4,10 +4,10 @@ import org.junit.Test;
 
 public class VirtualPetTest {
 
-	@Test
+	/*@Test
 	public void shouldBeAbleToCreatePet() {
 		VirtualPet pet = new VirtualPet();
-	}
+	}*/
 
 	@Test
 	public void petShouldHaveName() {

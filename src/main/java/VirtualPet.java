@@ -5,8 +5,6 @@ public class VirtualPet {
 	private int boredom = 10;
 	private int thirst = 10;
 
-	public VirtualPet() {
-	}
 
 	public VirtualPet(String name) {
 		petName = name;
