@@ -30,7 +30,7 @@ public class VirtualPetTest {
     public void shouldHaveDefaultBoredom() {
         VirtualPet underTest = new VirtualPet("Steve");
 
-        int expected = underTest.getHunger();
+        int expected = underTest.getBoredom();
 
         assertEquals(expected, 10);
     }
@@ -38,8 +38,18 @@ public class VirtualPetTest {
     public void shouldHaveDefaultThirst() {
         VirtualPet underTest = new VirtualPet("Steve");
 
-        int expected = underTest.getHunger();
+        int expected = underTest.getThirst();
 
         assertEquals(expected, 10);
+    }
+    @Test
+    public void shouldTick() {
+        VirtualPet pet = new VirtualPet("Kendrick");
+
+        int initialHunger = pet.getHunger();
+        pet.tick();
+        int hungerAfterTick = pet.getHunger();
+
+        assertEquals(initialHunger + 10, hungerAfterTick);
     }
 }

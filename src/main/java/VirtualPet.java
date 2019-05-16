@@ -1,28 +1,35 @@
 
 public class VirtualPet {
 	private String petName;
-	int hunger = 10;
-	int boredom = 10;
-	int thirst = 10;
-	
+	private int hunger = 10;
+	private int boredom = 10;
+	private int thirst = 10;
+
 	public VirtualPet() {
 	}
-	
+
 	public VirtualPet(String name) {
 		petName = name;
 	}
+
 	public String getName() {
 		return petName;
 	}
+
 	public int getHunger() {
 		return hunger;
 	}
+
 	public int getBoredom() {
-		return hunger;
+		return boredom;
 	}
+
 	public int getThirst() {
-		return hunger;
+		return thirst;
 	}
+
 	public void setPetName(String setName) {
-}
+		petName = setName;
+		
+	}
 }
