@@ -38,7 +38,7 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void shouldTickHunger() {
+	public void shouldTickHunger10() {
 		VirtualPet pet = new VirtualPet("Kendrick");
 		int initialHunger = pet.getHunger();
 		pet.tick();
@@ -47,7 +47,7 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void shouldTickThirst() {
+	public void shouldTickThirst10() {
 		VirtualPet pet = new VirtualPet("Kendrick");
 		int initialThirst = pet.getThirst();
 		pet.tick();
@@ -57,7 +57,7 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void shouldTickBoredom() {
+	public void shouldTickBoredom10() {
 		VirtualPet pet = new VirtualPet("Kendrick");
 		int initialBoredom = pet.getBoredom();
 		pet.tick();
@@ -84,6 +84,30 @@ public class VirtualPetTest {
 		int thirstAfterTick = pet.getThirst();
 		assertEquals(initialThirst - 10, thirstAfterTick);
 
+
 	}
 
+	@Test
+	public void playDecreasesBoredom() {
+		VirtualPet pet = new VirtualPet("Kendrick");
+
+		int initialBoredom = pet.getBoredom();
+		pet.play();
+		int boredomAfterTick = pet.getBoredom();
+
+		assertEquals(initialBoredom - 10, boredomAfterTick);
+	}
+
+	@Test
+	public void boredomIsAlwaysGreaterThan0() {
+		VirtualPet pet = new VirtualPet("Kendrick");
+
+		int initialBoredom = pet.getBoredom();
+		for (int i = 0; i < 4; i++) {
+			pet.play();
+		}
+		int boredomAfterTick = pet.getBoredom();
+
+		assertEquals(0, boredomAfterTick);
+	}
 }

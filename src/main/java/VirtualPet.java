@@ -46,6 +46,15 @@ public class VirtualPet {
 
 		hunger -= 10;
 		thirst -= 10;
-		
+
+	}
+
+	public void play() {
+		boredom -= 10;
+		if (boredom < 0) {
+			boredom = 0;
+
+		}
+
 	}
 }
