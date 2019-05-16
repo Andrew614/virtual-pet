@@ -116,7 +116,6 @@ public class VirtualPetTest {
 	public void boredomIsAlwaysGreaterThan0() {
 		VirtualPet pet = new VirtualPet("Kendrick");
 
-		int initialBoredom = pet.getBoredom();
 		for (int i = 0; i < 4; i++) {
 			pet.play();
 		}
@@ -124,4 +123,18 @@ public class VirtualPetTest {
 
 		assertEquals(0, boredomAfterTick);
 	}
+	@Test
+	public void hungerAndThirstIsAlwaysGreaterThan0() {
+		VirtualPet pet = new VirtualPet("Kendrick");
+
+		for (int i = 0; i < 4; i++) {
+			pet.feed();
+		}
+		int hungerAfterTick = pet.getHunger();
+		int thirstAfterTick = pet.getThirst();
+
+		assertEquals(0, hungerAfterTick);
+		assertEquals(0, thirstAfterTick);
+	}
+	
 }
