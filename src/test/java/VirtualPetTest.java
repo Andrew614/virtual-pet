@@ -62,9 +62,9 @@ public class VirtualPetTest {
 
 		int initialThirst = pet.getThirst();
 		pet.tick();
-		int ThirstAfterTick = pet.getThirst();
+		int thirstAfterTick = pet.getThirst();
 
-		assertEquals(initialThirst + 10, ThirstAfterTick);
+		assertEquals(initialThirst + 10, thirstAfterTick);
 	}
 
 	@Test
@@ -73,9 +73,9 @@ public class VirtualPetTest {
 
 		int initialBoredom = pet.getBoredom();
 		pet.tick();
-		int BoredomAfterTick = pet.getBoredom();
+		int boredomAfterTick = pet.getBoredom();
 
-		assertEquals(initialBoredom + 10, BoredomAfterTick);
+		assertEquals(initialBoredom + 10, boredomAfterTick);
 	}
 	@Test
 	public void feedLowersHunger() {
@@ -83,19 +83,21 @@ public class VirtualPetTest {
 
 		int initialHunger = pet.getHunger();
 		pet.feed();
-		int HungerAfterTick = pet.getHunger();
+		int hungerAfterTick = pet.getHunger();
 
-		assertEquals(initialHunger - 10, HungerAfterTick);
+		assertEquals(initialHunger - 10, hungerAfterTick);
 		
 }
+	@Test
 	public void feedLowersThirst() {
 		VirtualPet pet = new VirtualPet("Kendrick");
 
-		int initialHunger = pet.getThirst();
+		int initialThirst = pet.getThirst();
 		pet.feed();
-		int HungerAfterTick = pet.getThirst();
+		int thirstAfterTick = pet.getThirst();
 
-		assertEquals(initialHunger - 10, HungerAfterTick);
+		assertEquals(initialThirst - 10, thirstAfterTick);
+		
 		
 }
 	
