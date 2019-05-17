@@ -33,7 +33,7 @@ public class VirtualPetApp {
 		System.out.println("Your pet's hunger level is " + firstPet.getHunger());
 		System.out.println("Your pet's thirst level is " + firstPet.getThirst());
 		System.out.println("Your pet's boredom level is " + firstPet.getBoredom());
-
+        input.close();
 	}
 
 }
