@@ -33,11 +33,10 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		
+
 		hunger += 10;
 		boredom += 10;
 		thirst += 10;
-
 
 	}
 
@@ -65,5 +64,5 @@ public class VirtualPet {
 	public String getSpecies() {
 		return petSpecies;
 	}
-		
+
 }
