@@ -4,10 +4,11 @@ public class VirtualPet {
 	private int hunger = 10;
 	private int boredom = 10;
 	private int thirst = 10;
-
+	private String petSpecies;
 
 	public VirtualPet(String name) {
 		petName = name;
+		petSpecies = "Dog";
 	}
 
 	public String getName() {
@@ -60,4 +61,9 @@ public class VirtualPet {
 		}
 
 	}
+
+	public String getSpecies() {
+		return petSpecies;
+	}
+		
 }

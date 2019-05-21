@@ -4,10 +4,10 @@ import org.junit.Test;
 
 public class VirtualPetTest {
 
-	/*@Test
-	public void shouldBeAbleToCreatePet() {
-		VirtualPet pet = new VirtualPet();
-	}*/
+	/*
+	 * @Test public void shouldBeAbleToCreatePet() { VirtualPet pet = new
+	 * VirtualPet(); }
+	 */
 
 	@Test
 	public void petShouldHaveName() {
@@ -84,7 +84,6 @@ public class VirtualPetTest {
 		int thirstAfterTick = pet.getThirst();
 		assertEquals(initialThirst - 10, thirstAfterTick);
 
-
 	}
 
 	@Test
@@ -109,6 +108,7 @@ public class VirtualPetTest {
 
 		assertEquals(0, boredomAfterTick);
 	}
+
 	@Test
 	public void hungerAndThirstIsAlwaysGreaterThan0() {
 		VirtualPet pet = new VirtualPet("Kendrick");
@@ -122,5 +122,19 @@ public class VirtualPetTest {
 		assertEquals(0, hungerAfterTick);
 		assertEquals(0, thirstAfterTick);
 	}
-	
+
+	//@Test
+	public void petWillHaveASpecies() {
+		VirtualPet pet = new VirtualPet("Kendrick");
+		String species = pet.getSpecies();
+		assertEquals(null, species);
+
+	}
+	@Test
+	public void petSpeciesShouldBeDog() {
+		VirtualPet pet = new VirtualPet("Kendrick");
+		String species = pet.getSpecies();
+		assertEquals("Dog", species);
+	}
+
 }

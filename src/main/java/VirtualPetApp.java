@@ -20,8 +20,8 @@ public class VirtualPetApp {
 	private static void menu(Scanner input, VirtualPet firstPet) {
 		String userChoice = "";
 		do {
-			System.out.println("Enter 1 to play with " + firstPet.getName());
-			System.out.println("Enter 2 to feed " + firstPet.getName());
+			System.out.println("Enter 1 to feed " + firstPet.getName());
+			System.out.println("Enter 2 to play with " + firstPet.getName());
 			System.out.println("Enter 9 to quit game");
 			userChoice = input.nextLine();
 
