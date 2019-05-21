@@ -136,5 +136,6 @@ public class VirtualPetTest {
 		String species = pet.getSpecies();
 		assertEquals("Dog", species);
 	}
+	
 
 }
