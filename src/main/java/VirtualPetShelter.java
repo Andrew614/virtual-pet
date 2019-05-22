@@ -21,4 +21,16 @@ public class VirtualPetShelter {
        // VirtualPet petFromMap = shelter.get(pet.getName());
         return(pet.getName());
 	}
+	public VirtualPet getPet(String petName) {
+		return shelter.get(petName);
+	}
+
+	public String printAllPets() {
+		String out = "";
+		for(VirtualPet pet: shelter.values()) {
+			out += pet.getName();
+			System.out.print(pet.getName());
+		}
+		return out;
+	}
 }
