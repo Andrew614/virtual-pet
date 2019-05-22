@@ -1,3 +1,5 @@
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,11 +28,22 @@ public class VirtualPetShelter {
 	}
 
 	public String printAllPets() {
-		String out = "";
+		String petList = "";
 		for(VirtualPet pet: shelter.values()) {
-			out += pet.getName();
-			System.out.print(pet.getName());
+			petList += pet.getName();
+			System.out.println(pet.getName());
 		}
-		return out;
+		return petList;
 	}
+	
+/*	public String petStatus() {
+		
+	
+		String petStatusList = "";
+		for(VirtualPet pet: shelter.values()) {
+			petStatusList += pet.getName()+"\t "+pet.getHunger()+"\t"+pet.getBoredom()+"\t"+ pet.getThirst()+"\n";
+			
+		}
+		return petStatusList;
+	}*/
 }
