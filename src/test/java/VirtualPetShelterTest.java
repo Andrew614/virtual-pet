@@ -32,10 +32,6 @@ public class VirtualPetShelterTest {
 	@Test
 	public void canRetrievePetNameFromShelter() {
 		shelter1.addVitrtualPetToShelter(pet1);
-<<<<<<< HEAD
-		assertEquals("Kendrick", shelter1.getNameFromList(pet1));
-
-=======
 		String pet1Name = shelter1.getPet("Kendrick").getName();
 		assertEquals("Kendrick", pet1Name);
 	}
@@ -52,6 +48,5 @@ public class VirtualPetShelterTest {
 		String petListTest = shelter1.printAllPets();
 		
 		assertThat(petListTest, is("Foo FooKendrick"));
->>>>>>> a856a3743b1a95391096cb9730852fb1e6196acf
 	}
 }
