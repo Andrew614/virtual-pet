@@ -38,4 +38,5 @@ public class VirtualPetShelterTest {
 		shelter1.addVitrtualPetToShelter(pet1);
 		assertEquals("Kendrick", shelter1.getNameFromList(pet1));
 	}
+	
 }

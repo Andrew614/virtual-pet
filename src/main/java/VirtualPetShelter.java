@@ -18,8 +18,7 @@ public class VirtualPetShelter {
 	}
 
 	public String getNameFromList(VirtualPet pet) {
-        VirtualPet retrievedName = shelter.get(pet.getName());
-        System.out.println(retrievedName);
-		return pet.getName();
+       // VirtualPet petFromMap = shelter.get(pet.getName());
+        return(pet.getName());
 	}
 }
