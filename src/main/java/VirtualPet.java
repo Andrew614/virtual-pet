@@ -5,10 +5,16 @@ public class VirtualPet {
 	private int boredom = 10;
 	private int thirst = 10;
 	private String petSpecies;
+	private int age = 0;
+
+	public int getAge() {
+		return age;
+	}
 
 	public VirtualPet(String name) {
 		petName = name;
 		petSpecies = "Dog";
+		age = 0;
 	}
 
 	public String getName() {
@@ -33,11 +39,10 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		
+
 		hunger += 10;
 		boredom += 10;
 		thirst += 10;
-
 
 	}
 
@@ -58,6 +63,9 @@ public class VirtualPet {
 		if (boredom < 0) {
 			boredom = 0;
 
+		} else if(boredom > 100) {
+			
+			
 		}
 
 	}
@@ -65,5 +73,6 @@ public class VirtualPet {
 	public String getSpecies() {
 		return petSpecies;
 	}
-		
+	
+
 }
