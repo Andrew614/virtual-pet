@@ -45,9 +45,14 @@ public class VirtualPetShelterTest {
 	public void canListMultiplePets() {
 		shelter1.addVitrtualPetToShelter(pet1);
 		shelter1.addVitrtualPetToShelter(pet2);
-		String petListTest = shelter1.printAllPets();
+		String[][] petListTest = shelter1.petNamesAndStats();
+		String pet1Name = petListTest[0][0];
+		String pet2Name = petListTest[1][0];
+		String pet1Hunger = petListTest[1][1];
+		System.out.println(pet1Hunger);
 		
-		assertThat(petListTest, is("Foo Foo\nKendrick"));
+		assertThat(pet1Name, is("Foo Foo"));
+		assertThat(pet2Name, is("Kendrick"));
 	}
 	/*@Test
 	public void canPrintStatusTable() {

@@ -63,6 +63,9 @@ public class VirtualPet {
 		if (boredom < 0) {
 			boredom = 0;
 
+		} else if(boredom > 100) {
+			
+			
 		}
 
 	}

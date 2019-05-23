@@ -136,10 +136,4 @@ public class VirtualPetTest {
 		String species = pet.getSpecies();
 		assertEquals("Dog", species);
 	}
-    @Test
-    public void petShouldHaveAge() {
-    	VirtualPet pet = new VirtualPet("Kendrick");
-    	int age = pet.getAge();
-    	assertEquals(0, age);
-    }
 }
