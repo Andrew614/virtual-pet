@@ -7,6 +7,7 @@ import org.junit.Test;
 public class VirtualPetShelterTest {
 	VirtualPet pet1 = new VirtualPet("Kendrick");
 	VirtualPet pet2 = new VirtualPet("Foo Foo");
+	VirtualPet pet3 = new VirtualPet("Bar Bar");
 	
 	VirtualPetShelter shelter1 = new VirtualPetShelter();
 
@@ -65,6 +66,13 @@ public class VirtualPetShelterTest {
 		}
 	
 		assertEquals(1, shelter1.getShelterSize());
+	}
+	@Test
+	public void canFeedMultiplePets() {
+		shelter1.addVitrtualPetToShelter(pet1);
+		shelter1.addVitrtualPetToShelter(pet2);
+		shelter1.addVitrtualPetToShelter(pet2);
+		
 	}
 	
 	/*@Test

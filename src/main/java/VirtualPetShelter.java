@@ -35,15 +35,7 @@ public class VirtualPetShelter {
 		}
 		return petList;
 	}
-<<<<<<< HEAD
-	
-/*	public String petStatus() {
-		
-	
-		String petStatusList = "";
-		for(VirtualPet pet: shelter.values()) {
-			petStatusList += pet.getName()+"\t "+pet.getHunger()+"\t"+pet.getBoredom()+"\t"+ pet.getThirst()+"\n";
-=======
+
 
 	public String[][] petNamesAndStats() {
 		String[][]petNames = new String[getShelterSize()][5];
@@ -59,6 +51,7 @@ public class VirtualPetShelter {
 		}
 		return petNames;
 	}
+	
 	public void removeDeadPets() {
 		for (VirtualPet pet : shelter.values()) {
 			if (!pet.getIsAlive()) {
