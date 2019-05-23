@@ -47,6 +47,13 @@ public class VirtualPetShelterTest {
 		shelter1.addVitrtualPetToShelter(pet2);
 		String petListTest = shelter1.printAllPets();
 		
-		assertThat(petListTest, is("Foo FooKendrick"));
+		assertThat(petListTest, is("Foo Foo\nKendrick"));
 	}
+	/*@Test
+	public void canPrintStatusTable() {
+		shelter1.addVitrtualPetToShelter(pet1);
+		shelter1.addVitrtualPetToShelter(pet2);
+		String petListTest = shelter1.printAllPets();
+		assertThat();
+	}*/
 }
