@@ -60,8 +60,8 @@ public class VirtualPetShelterTest {
 		shelter1.addVitrtualPetToShelter(pet2);
 		for(int i=0; i<50; i++) {
 			pet1.tick();
+			shelter1.removeDeadPets();
 			if(!pet1.getIsAlive()) {
-				System.out.println("pet is Dead");
 			}
 		}
 	
@@ -71,8 +71,12 @@ public class VirtualPetShelterTest {
 	public void canFeedMultiplePets() {
 		shelter1.addVitrtualPetToShelter(pet1);
 		shelter1.addVitrtualPetToShelter(pet2);
-		shelter1.addVitrtualPetToShelter(pet2);
-		
+		shelter1.addVitrtualPetToShelter(pet3);
+		shelter1.addToSelectedPets(pet2);
+		shelter1.addToSelectedPets(pet3);
+		shelter1.feedSelectedPets();
+		assertEquals(0, pet2.getHunger());
+		assertEquals(0, pet3.getHunger());
 	}
 	
 	/*@Test

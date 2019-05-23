@@ -6,6 +6,7 @@ import java.util.Map;
 public class VirtualPetShelter {
 
 	Map<String, VirtualPet> shelter = new HashMap<>();
+	ArrayList<VirtualPet> selectedPets = new ArrayList<VirtualPet>();
 
 	public void addVitrtualPetToShelter(VirtualPet pet) {
 		shelter.put(pet.getName(), pet);
@@ -51,7 +52,19 @@ public class VirtualPetShelter {
 		}
 		return petNames;
 	}
-	
+	public void addToSelectedPets(VirtualPet pet) {
+		selectedPets.add(pet);
+	}
+	public void feedSelectedPets() {
+		for(VirtualPet pet : selectedPets) {
+			pet.feed();
+		}
+	}
+	public void playWithSelectedPets() {
+		for(VirtualPet pet : selectedPets) {
+			pet.play();
+		}
+	}
 	public void removeDeadPets() {
 		for (VirtualPet pet : shelter.values()) {
 			if (!pet.getIsAlive()) {
