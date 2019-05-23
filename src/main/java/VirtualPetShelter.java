@@ -16,7 +16,7 @@ public class VirtualPetShelter {
 	}
 
 	public void removeVirtualPetFromShelter(VirtualPet pet) {
-		shelter.remove(pet.getName(), pet);
+		shelter.remove(pet.getName());
 	}
 
 	public String getNameFromList(VirtualPet pet) {
@@ -50,6 +50,16 @@ public class VirtualPetShelter {
 			i++;
 		}
 		return petNames;
+	}
+	public void removeDeadPets() {
+		for (VirtualPet pet : shelter.values()) {
+			if (!pet.getIsAlive()) {
+				removeVirtualPetFromShelter(pet);
+				System.out.println("test");
+			}
+			
+			
+		}
 	}
 	/*
 	public String petStatus(String[] petNames) {

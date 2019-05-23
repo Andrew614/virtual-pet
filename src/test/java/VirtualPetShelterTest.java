@@ -48,12 +48,25 @@ public class VirtualPetShelterTest {
 		String[][] petListTest = shelter1.petNamesAndStats();
 		String pet1Name = petListTest[0][0];
 		String pet2Name = petListTest[1][0];
-		String pet1Hunger = petListTest[1][1];
-		System.out.println(pet1Hunger);
+	
 		
 		assertThat(pet1Name, is("Foo Foo"));
 		assertThat(pet2Name, is("Kendrick"));
 	}
+	@Test
+	public void canKillPet() {
+		shelter1.addVitrtualPetToShelter(pet1);
+		shelter1.addVitrtualPetToShelter(pet2);
+		for(int i=0; i<50; i++) {
+			pet1.tick();
+			if(!pet1.getIsAlive()) {
+				System.out.println("pet is Dead");
+			}
+		}
+	
+		assertEquals(1, shelter1.getShelterSize());
+	}
+	
 	/*@Test
 	public void canPrintStatusTable() {
 		shelter1.addVitrtualPetToShelter(pet1);
