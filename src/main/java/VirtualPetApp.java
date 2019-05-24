@@ -3,18 +3,23 @@ import java.util.Scanner;
 public class VirtualPetApp {
 
 	public static void main(String[] args) {
-
+		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Welcome to Virtual Pets Amok");
 		System.out.println("Enter a pet name");
 		String petName = input.nextLine();
-
-		VirtualPet firstPet = new VirtualPet(petName);
-
 		
-
-		menu(input, firstPet);
-
+		VirtualPet firstPet = new VirtualPet(petName);
+		VirtualPetShelter shelter = new VirtualPetShelter();
+		shelter.addVitrtualPetToShelter(firstPet);
+		System.out.println("Enter a pet name");
+		petName = input.nextLine();
+		VirtualPet secondPet = new VirtualPet(petName);
+		shelter.addVitrtualPetToShelter(secondPet);
+		System.out.println(shelter.getPet(firstPet.getName()));
+		firstPet.tick();
+		
+		shelter.printStatus();
 	}
 
 	private static void menu(Scanner input, VirtualPet firstPet) {
@@ -24,7 +29,7 @@ public class VirtualPetApp {
 			System.out.println("Enter 2 to play with " + firstPet.getName());
 			System.out.println("Enter 9 to quit game");
 			userChoice = input.nextLine();
-
+			
 			firstPet.tick();
 
 			switch (userChoice) {

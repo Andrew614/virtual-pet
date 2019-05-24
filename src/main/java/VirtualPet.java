@@ -84,5 +84,9 @@ public class VirtualPet {
 		
 	}
 	
+	public String toString() {
+		return "Your pet " + petName + " hunger leve is at " + hunger;
+	}
+	
 
 }
