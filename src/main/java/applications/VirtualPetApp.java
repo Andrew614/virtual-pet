@@ -49,7 +49,7 @@ public class VirtualPetApp {
 			System.out.println(firstPet.getName() + "'s boredom level is: " + firstPet.getBoredom() + "\n");
 
 		} while (!userChoice.equals("9"));
-
+		
 		System.out.println("Thanks for playing!");
 	}
 
