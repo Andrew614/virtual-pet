@@ -1,6 +1,5 @@
+package applications;
 import java.util.Scanner;
-
-import models.VirtualPet;
 
 public class VirtualPetApp {
 
