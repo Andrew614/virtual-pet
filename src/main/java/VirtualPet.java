@@ -1,16 +1,10 @@
 
 public class VirtualPet {
 	private String petName;
-	private int hunger = 10;
-	private int boredom = 10;
-	private int thirst = 10;
-	private String petSpecies;
-	private int age = 0;
-	private boolean isAlive = true;
 
-	public boolean getIsAlive() {
-		return isAlive;
-	}
+	private int boredom = 10;
+  private String petSpecies;
+	private int age = 0;
 
 	public int getAge() {
 		return age;
@@ -48,23 +42,10 @@ public class VirtualPet {
 		hunger += 10;
 		boredom += 10;
 		thirst += 10;
-		age += 10;
-		if ((hunger >= 100) || (thirst >=100) || (age >= 1000) ) {
-			isAlive=false;
-		}
 
 	}
 
-	public void feed() {
 
-		hunger -= 10;
-		thirst -= 10;
-		if (hunger < 0) {
-			hunger = 0;
-		}
-		if (thirst < 0) {
-			thirst = 0;
-		}
 	}
 
 	public void play() {
@@ -72,16 +53,15 @@ public class VirtualPet {
 		if (boredom < 0) {
 			boredom = 0;
 
-		} 
+		} else if(boredom > 100) {
+			
+			
+		}
 
 	}
 
 	public String getSpecies() {
 		return petSpecies;
-	}
-	public void petHasDied () {
-
-		
 	}
 	
 
