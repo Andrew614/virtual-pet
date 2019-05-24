@@ -1,8 +1,12 @@
+package models;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import models.VirtualPet;
+import models.VirtualPetShelter;
 
 public class VirtualPetShelterTest {
 	VirtualPet pet1 = new VirtualPet("Kendrick");

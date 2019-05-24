@@ -1,6 +1,9 @@
+package models;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import models.VirtualPet;
 
 public class VirtualPetTest {
 

@@ -1,3 +1,4 @@
+package models;
 
 public class VirtualPet {
 	private String petName;
