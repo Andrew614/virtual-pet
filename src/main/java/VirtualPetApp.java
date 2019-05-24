@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import models.VirtualPet;
+
 public class VirtualPetApp {
 
 	public static void main(String[] args) {
