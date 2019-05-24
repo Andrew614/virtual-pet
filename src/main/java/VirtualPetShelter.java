@@ -74,7 +74,7 @@ public class VirtualPetShelter {
 	
 	public void printStatus() {
 		for(VirtualPet pet: shelter.values()) {			
-			System.out.printf("%1$-30s %2$10d %2$10d %2$10d %2$10d \n", pet.getName(), pet.getHunger(), pet.getBoredom(), pet.getThirst() + pet.getAge());
+			System.out.printf("%1$-30s %2$10d %3$10d %4$10d %5$10d \n", pet.getName(), pet.getHunger(), pet.getBoredom(), pet.getThirst(), pet.getAge());
 		}
 	}
 }

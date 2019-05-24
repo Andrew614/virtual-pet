@@ -17,8 +17,8 @@ public class VirtualPetApp {
 		VirtualPet secondPet = new VirtualPet(petName);
 		shelter.addVitrtualPetToShelter(secondPet);
 		System.out.println(shelter.getPet(firstPet.getName()));
-		firstPet.tick();
-		
+		System.out.printf("%1$-30s %2$10s %3$10s %4$10s %5$10s \n", "Pet Name", "Hunger", "Boredom", "Thirst", "Age");
+		System.out.println("--------------------------------------------------------------------------");
 		shelter.printStatus();
 	}
 
