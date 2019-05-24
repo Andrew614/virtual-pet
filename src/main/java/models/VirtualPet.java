@@ -1,10 +1,8 @@
 package models;
 
 public class VirtualPet {
-	private String petName;
-	//private int hunger = 10;
-	//private int thirst = 10;
-	private int boredom = 10;
+	protected String petName;
+	protected int boredom = 10;
 
 	private int age = 0;
 	private boolean isAlive = true;
@@ -28,9 +26,6 @@ public class VirtualPet {
 		return boredom;
 	}
 
-	/*public int getThirst() {
-		return thirst;
-	}*/
 
 	public void setPetName(String setName) {
 		petName = setName;
@@ -38,7 +33,7 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		//extrapolate other stats from age
+		// extrapolate other stats from age
 		age += 10;
 		if (age >= 1000) {
 			isAlive=false;
