@@ -1,12 +1,17 @@
 package models;
 
-public class VirtualPet {
+public abstract class VirtualPet {
 
 	protected String petName;
 	protected int boredom = 10;
-	private int age = 0;
-
-
+	protected int age = 0;
+	protected boolean isAlive = true;
+	protected boolean ranAway = false;
+	
+	public boolean getRanAway() {
+		return ranAway;
+	}
+	
 	public int getAge() {
 		return age;
 	}
@@ -24,15 +29,10 @@ public class VirtualPet {
 
 	}
 
-	public void tick() {
-		// extrapolate other stats from age
-		age += 10;
-		if (age >= 1000) {
-			isAlive = false;
-		}
-
-	}
-
+	public abstract void tick();
+		
+	public abstract void walk();
+	
 	public void play() {
 		boredom -= 10;
 		if (boredom < 0) {
