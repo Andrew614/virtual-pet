@@ -39,6 +39,11 @@ public abstract class OrganicPet extends VirtualPet {
 			thirst = 0;
 		}
 	}
+	public void clean() {
+		soilLevel = 0;
+		isSoiled = false;
+		
+	}
 
 	@Override
 	public void tick() {
@@ -60,10 +65,10 @@ public abstract class OrganicPet extends VirtualPet {
 		} else if (boredom > 100) {
 			ranAway = true;
 		}
-		age += 10;
+		age += 1;
 		if (age < 0) {
 			age = 0;
-		} else if (age > 100) {
+		} else if (age >= 100) {
 			isAlive = false;
 		}
 		soilLevel += 10;
@@ -72,7 +77,7 @@ public abstract class OrganicPet extends VirtualPet {
 			System.out.println("Your pet has soiled itself");
 		} else if (soilLevel >= 100) {
 			soilLevel = 100;
-	}
+		}
 
 	}
 
@@ -85,7 +90,7 @@ public abstract class OrganicPet extends VirtualPet {
 			isSoiled = false;
 			System.out.println("Your pet's area is cleaned");
 		}
-		
+
 	}
 
 }

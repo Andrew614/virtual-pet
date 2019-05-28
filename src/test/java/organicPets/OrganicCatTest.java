@@ -142,6 +142,24 @@ public class OrganicCatTest {
 		boolean soiledAfterTick = pet.getSoiled();
 		assertThat(soiledAfterTick, is(true));
 	}
+	@Test
+	public void willRunAwayWhenBoredomIsGreaterThan100() {
+		OrganicCat pet = new OrganicCat("Kendrick");
+		for (int i = 0; i < 10; i++) {
+			pet.tick();
+		}
+		boolean hasRunAway = pet.getRanAway();
+		assertThat(hasRunAway, is(true));
+	}
+	@Test
+	public void organicCatWillDieAfter10Ticks() {
+		OrganicCat pet = new OrganicCat("Kendrick");
+		for (int i = 0; i < 10; i++) {
+			pet.tick();
+		}
+		boolean isAlive = pet.getIsAlive();
+		assertThat(isAlive, is(false));
+	}
 	
 
 	

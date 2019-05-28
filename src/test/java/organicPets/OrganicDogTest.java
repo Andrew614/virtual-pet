@@ -142,6 +142,61 @@ public class OrganicDogTest {
 		boolean soiledAfterTick = pet.getSoiled();
 		assertThat(soiledAfterTick, is(true));
 	}
+	@Test
+	public void willRunAwayWhenBoredomIsGreaterThan100() {
+		OrganicDog pet = new OrganicDog("Kendrick");
+		for (int i = 0; i < 10; i++) {
+			pet.tick();
+		}
+		boolean hasRunAway = pet.getRanAway();
+		assertThat(hasRunAway, is(true));
+	}
+	@Test
+	public void organicDogWillDieAfter10Ticks() {
+		OrganicDog pet = new OrganicDog("Kendrick");
+		for (int i = 0; i < 10; i++) {
+			pet.tick();
+		}
+		boolean isAlive = pet.getIsAlive();
+		assertThat(isAlive, is(false));
+	}
+	
+	@Test
+	public void shouldHaveSoilLevel0AfterClensing() {
+		OrganicDog pet = new OrganicDog("Kendrick");
+		pet.tick();
+		pet.clean();
+		int soilLevel = pet.getSoilLevel();
+		boolean isSoiled = pet.getSoiled();
+		assertThat(soilLevel, is(0));
+		assertThat(isSoiled, is(false));
+	}
+	@Test
+	public void shouldHaveAge1After1Tick() {
+		OrganicDog pet = new OrganicDog("Kendrick");
+		pet.tick();
+		int age = pet.getAge();
+		assertThat(age, is(1));
+	}
+	@Test
+	public void shouldDieAtAge100() {
+		OrganicDog pet = new OrganicDog("Kendrick");
+		for (int i = 0; i < 100; i++) {
+			pet.tick();
+			pet.feed();
+		}
+		boolean isAlive = pet.getIsAlive();
+		assertThat(isAlive, is(false));
+	}
+	public void shouldNotDieAtAge99() {
+		OrganicDog pet = new OrganicDog("Kendrick");
+		for (int i = 0; i < 99; i++) {
+			pet.tick();
+			pet.feed();
+		}
+		boolean isAlive = pet.getIsAlive();
+		assertThat(isAlive, is(true));
+	}
 	
 	
 }

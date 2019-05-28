@@ -12,6 +12,10 @@ public abstract class VirtualPet {
 		return ranAway;
 	}
 	
+	public boolean getIsAlive() {
+		return isAlive;
+	}
+	
 	public int getAge() {
 		return age;
 	}
