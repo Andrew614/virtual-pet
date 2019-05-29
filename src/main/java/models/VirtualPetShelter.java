@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import organicPets.OrganicCat;
+import organicPets.OrganicDog;
+import roboticPets.RoboticCat;
+import roboticPets.RoboticDog;
+
 public class VirtualPetShelter {
 
 	Map<String, VirtualPet> shelter = new HashMap<>();
@@ -32,7 +37,7 @@ public class VirtualPetShelter {
 	public String printAllPets() {
 		String petList = "";
 		for (VirtualPet pet : shelter.values()) {
-			petList += pet.getName();
+			petList += pet.getName() + "\n";
 			System.out.println(pet.getName());
 		}
 		return petList;
@@ -43,8 +48,21 @@ public class VirtualPetShelter {
 			if (!pet.getIsAlive() || pet.getRanAway()) {
 				removeVirtualPetFromShelter(pet);
 			}
-
 		}
 	}
+	public String getPetType(VirtualPet pet) {
+		if(pet instanceof OrganicDog)
+			return "OrganicDog";
+		if(pet instanceof OrganicCat)
+			return "OrganicCat";
+		if(pet instanceof RoboticDog)
+			return "RoboticDog";
+		if(pet instanceof RoboticCat)
+			return "RoboticCat";
+		return "";
+		
+		
 
+		
+	}
 }

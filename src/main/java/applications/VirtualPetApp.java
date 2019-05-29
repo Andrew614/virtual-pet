@@ -2,6 +2,7 @@ package applications;
 
 import java.util.Scanner;
 
+import models.VirtualPet;
 import models.VirtualPetShelter;
 import organicPets.OrganicCat;
 import organicPets.OrganicDog;
@@ -62,7 +63,15 @@ public class VirtualPetApp {
 				}
 			}
 			break;
+		case "2":
+			System.out.print(shelter1.printAllPets());
+			System.out.println("Select which pet you would like to interact with.");
+			userChoice = inputScanner.nextLine();
+			shelter1.getPet(userChoice);
+			
 
+			
+					
 		default:
 			System.out.println("Please Enter a valid Menu option!");
 		}

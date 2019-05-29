@@ -1,13 +1,13 @@
 package organicPets;
 
-import interfaces.Cat;
 
-public class OrganicCat extends OrganicPet implements Cat {
+
+public class OrganicCat extends OrganicPet{
 	public OrganicCat(String petName) {
 		super(petName);
 	}
 	@Override
-	public String meow() {
+	public String makeSound() {
 		return "Meow";
 	}
 
