@@ -7,9 +7,10 @@ import org.junit.Test;
 
 import models.VirtualPet;
 import models.VirtualPetShelter;
+import organicPets.OrganicDog;
 
 public class VirtualPetShelterTest {
-	VirtualPet pet1 = new VirtualPet("Kendrick");
+	OrganicDog pet1 = new OrganicDog("Kendrick");
 	VirtualPet pet2 = new VirtualPet("Foo Foo");
 	
 	VirtualPetShelter shelter1 = new VirtualPetShelter();

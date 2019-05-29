@@ -1,4 +1,5 @@
 package models;
+
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,38 +39,14 @@ public class VirtualPetShelter {
 		return petList;
 	}
 
-	public String[][] petNamesAndStats() {
-		String[][]petNames = new String[getShelterSize()][5];
-		int i = 0;
-		for (VirtualPet pet : shelter.values()) {
-			petNames[i][0] = pet.getName();
-			petNames[i][1] = pet.getHunger()+"";
-			petNames[i][2] = pet.getThirst()+"";
-			petNames[i][3] = pet.getBoredom()+"";
-			petNames[i][4] = pet.getAge()+"";
-			
-			i++;
-		}
-		return petNames;
-	}
 	public void removeDeadPets() {
 		for (VirtualPet pet : shelter.values()) {
-			if (!pet.getIsAlive()) {
+			if (!pet.getIsAlive() || pet.getRanAway()) {
 				removeVirtualPetFromShelter(pet);
 				System.out.println("test");
 			}
-			
-			
+
 		}
 	}
-	/*
-	public String petStatus(String[] petNames) {
 
-		String[] petStatusList;
-		for (String petName : petNames) {
-			shelter.get(petName).getName();
-			
-		}
-		return petStatusList;
-	}*/
 }
