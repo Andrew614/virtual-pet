@@ -139,4 +139,12 @@ public class VirtualPetShelter {
 		
 	}
 
+	public void returnPetsToShelter() {
+		for(VirtualPet placeHolder : selectedPets) {
+			shelter.put(placeHolder.getName(), placeHolder);
+			selectedPets.remove(placeHolder);
+			System.out.println(placeHolder.getName());
+		}
+	}
+
 }

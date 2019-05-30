@@ -174,6 +174,7 @@ public class VirtualPetApp {
 						System.out.println("Please Enter a valid Menu option!");
 					}
 				}
+				shelter1.returnPetsToShelter();
 				break;
 
 			case "9":
