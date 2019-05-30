@@ -2,7 +2,7 @@ package roboticPets;
 
 import models.VirtualPet;
 
-public class RoboticPet extends VirtualPet {
+public abstract class RoboticPet extends VirtualPet {
 	protected int oilLevel = 10;
 	protected int maintenanceLevel = 0;
 	protected boolean needsMaintenance = false;

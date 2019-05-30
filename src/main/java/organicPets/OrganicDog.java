@@ -1,15 +1,13 @@
 package organicPets;
 
-import interfaces.Dog;
-
-public class OrganicDog extends OrganicPet implements Dog{
+public class OrganicDog extends OrganicPet{
 
 	public OrganicDog(String petName) {
 		super(petName);
 	}
-	
+
 	@Override
-	public String bark() {
+	public String makeSound() {
 		return "Woof Woof";
 	}
 

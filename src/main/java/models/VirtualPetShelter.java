@@ -6,12 +6,15 @@ import java.util.Map;
 
 import organicPets.OrganicCat;
 import organicPets.OrganicDog;
+import organicPets.OrganicPet;
 import roboticPets.RoboticCat;
 import roboticPets.RoboticDog;
+import roboticPets.RoboticPet;
 
 public class VirtualPetShelter {
 
 	Map<String, VirtualPet> shelter = new HashMap<>();
+	ArrayList<VirtualPet> selectedPets = new ArrayList<VirtualPet>();
 
 	public void addVitrtualPetToShelter(VirtualPet pet) {
 		shelter.put(pet.getName(), pet);
@@ -38,7 +41,6 @@ public class VirtualPetShelter {
 		String petList = "";
 		for (VirtualPet pet : shelter.values()) {
 			petList += pet.getName() + "\n";
-			System.out.println(pet.getName());
 		}
 		return petList;
 	}
@@ -50,19 +52,25 @@ public class VirtualPetShelter {
 			}
 		}
 	}
-	public String getPetType(VirtualPet pet) {
-		if(pet instanceof OrganicDog)
-			return "OrganicDog";
-		if(pet instanceof OrganicCat)
-			return "OrganicCat";
-		if(pet instanceof RoboticDog)
-			return "RoboticDog";
-		if(pet instanceof RoboticCat)
-			return "RoboticCat";
-		return "";
-		
-		
 
-		
+	public String getPetType(VirtualPet pet) {
+		if (pet instanceof OrganicPet)
+			return "OrganicPet";
+		if (pet instanceof RoboticPet)
+			return "RoboticPet";
+		return "";
+
 	}
+
+	public void addToSelectedPets(VirtualPet pet) {
+		selectedPets.add(pet);
+		removeVirtualPetFromShelter(pet);
+	}
+	
+	public void playWithAllPets() {
+		for(VirtualPet placeHolder : selectedPets) {
+			placeHolder.play();
+		}
+	}
+	
 }
