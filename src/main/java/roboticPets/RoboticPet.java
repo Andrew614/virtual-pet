@@ -5,8 +5,12 @@ import models.VirtualPet;
 public abstract class RoboticPet extends VirtualPet {
 	protected int oilLevel = 10;
 	protected int maintenanceLevel = 0;
+
 	protected boolean needsMaintenance = false;
 
+	public int getMaintenanceLevel() {
+		return maintenanceLevel;
+	}
 	public RoboticPet(String petName) {
 		this.petName = petName;
 	}

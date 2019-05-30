@@ -21,6 +21,8 @@ public class VirtualPetApp {
 
 		System.out.println("Welcome to Virtual Pet!");
 		do {
+	    	shelter1.organicPrintStatus();
+	    	shelter1.roboticPrintStatus();
 			System.out.println("Enter 1 to create a Pet");
 			System.out.println("Enter 2 Interact with Pet");
 			System.out.println("Enter 3 to Remove Pet");
@@ -179,16 +181,28 @@ public class VirtualPetApp {
 				
 				break;
 			case "3":
+				System.out.println(shelter1.printAllPets());
+				System.out.println("Select a pet to remove");
+				String petToRemove = inputScanner.nextLine();
+				if (shelter1.shelterContainsName(petToRemove)) {
+					shelter1.removeVirtualPetFromShelter(shelter1.getPet(petToRemove));
+					System.out.println(petToRemove + " has been adopted.");
+				} else {
+					System.out.println("Please enter the name of a pet in your shelter");
+				}
 				break;
 
 			case "9":
 				exitMenu = true;
-
+				break;
 			default:
 				System.out.println("Please Enter a valid Menu option!");
 			}
+			
 		} while (!exitMenu);
-		System.out.println("Out of the do while loop");
-
+		System.out.println("Thank you for playing. Bye Bye!");
 	}
-}
+
+	
+	}
+

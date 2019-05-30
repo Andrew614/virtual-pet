@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import organicPets.OrganicCat;
-import organicPets.OrganicDog;
+
 import organicPets.OrganicPet;
-import roboticPets.RoboticCat;
-import roboticPets.RoboticDog;
+
 import roboticPets.RoboticPet;
 
 public class VirtualPetShelter {
@@ -148,5 +146,31 @@ public class VirtualPetShelter {
 		}
 		
 	}
-
+	public String printAllPets() {
+		String petList = "";
+		for (VirtualPet pet : shelter.values()) {
+			petList += pet.getName() + "\n";
+		}
+		return petList;
+	}
+	public boolean shelterContainsName(String petName) {
+		if (shelter.containsKey(petName))
+		return true;
+		return false; 
+	}
+	public void organicPrintStatus() {
+    	System.out.printf("\n%1$-20s %2$10s %3$10s %4$10s %5$10s \n", "Organic Pet Name", "Hunger", "Boredom", "Thirst", "Age");
+		for(VirtualPet pet: shelter.values()) {
+            if (pet instanceof OrganicPet)
+            	System.out.printf("%1$-20s %2$10d %3$10d %4$10d %5$10d \n", pet.getName(), ((OrganicPet) pet).getHunger(), pet.getBoredom(), ((OrganicPet) pet).getThirst(), pet.getAge());
+        }
+    }
+	public void roboticPrintStatus() {
+    	System.out.printf("\n%1$-20s %2$10s %3$10s %4$10s %5$10s \n", "Robotic Pet Name", "Oil", "Boredom", "Mainteneance", "Age");
+		for(VirtualPet pet: shelter.values()) {
+            if (pet instanceof RoboticPet)
+            	System.out.printf("%1$-20s %2$10d %3$10d %4$10d %5$10d \n", pet.getName(), ((RoboticPet) pet).getOilLevel(), pet.getBoredom(), ((RoboticPet) pet).getMaintenanceLevel(), pet.getAge());
+        }
+    }
 }
+

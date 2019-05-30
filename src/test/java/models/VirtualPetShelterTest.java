@@ -1,7 +1,7 @@
 package models;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -9,6 +9,7 @@ import models.VirtualPet;
 import models.VirtualPetShelter;
 import organicPets.OrganicCat;
 import organicPets.OrganicDog;
+import organicPets.OrganicPet;
 import roboticPets.RoboticCat;
 import roboticPets.RoboticDog;
 import roboticPets.RoboticPet;
@@ -64,6 +65,12 @@ public class VirtualPetShelterTest {
 				
 				
 	}
+	@Test
+	public void testName() throws Exception {
+    	System.out.printf("%1$-20s %2$10s %3$10s %4$10s %5$10s \n", "Pet Name", "Hunger Level", "Boredom Level", "Thirst Level", "Age");
+
+	}
+
 
 
 	
