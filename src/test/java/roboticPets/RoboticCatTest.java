@@ -52,9 +52,9 @@ public class RoboticCatTest {
 		assertThat(isAlive, is(false));
 	}
 	@Test
-	public void catCanMeow() {
-		String meow = underTest.meow();
-		assertThat(meow, is("Meow"));
+	public void catCanmakeSound() {
+		String makeSound = underTest.makeSound();
+		assertThat(makeSound, is("makeSound"));
 	}
 	@Test
 	public void willRunAwayWhenBoredomIsGreaterThan100() {

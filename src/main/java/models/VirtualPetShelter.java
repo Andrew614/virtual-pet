@@ -15,6 +15,7 @@ public class VirtualPetShelter {
 
 	Map<String, VirtualPet> shelter = new HashMap<>();
 	ArrayList<VirtualPet> selectedPets = new ArrayList<VirtualPet>();
+	ArrayList<VirtualPet> petsNotYetSelected = new ArrayList<VirtualPet>();
 
 	public void addVitrtualPetToShelter(VirtualPet pet) {
 		shelter.put(pet.getName(), pet);
@@ -27,6 +28,15 @@ public class VirtualPetShelter {
 	public void removeVirtualPetFromShelter(VirtualPet pet) {
 		shelter.remove(pet.getName());
 	}
+	public void removePetsNotYetSelected(VirtualPet pet) {
+		petsNotYetSelected.remove(pet);
+	}
+	public void fillPetsNotYetSelected() {
+		petsNotYetSelected.clear();
+		for(VirtualPet placeHolder : shelter.values()) {
+			petsNotYetSelected.add(placeHolder);
+		}
+	}
 
 	public String getNameFromList(VirtualPet pet) {
 		// VirtualPet petFromMap = shelter.get(pet.getName());
@@ -37,9 +47,9 @@ public class VirtualPetShelter {
 		return shelter.get(petName);
 	}
 
-	public String printAllPets() {
+	public String printPetsNotSelected() {
 		String petList = "";
-		for (VirtualPet pet : shelter.values()) {
+		for (VirtualPet pet : petsNotYetSelected) {
 			petList += pet.getName() + "   " + getPetType(pet) + "\n";
 		}
 		return petList;
@@ -65,7 +75,7 @@ public class VirtualPetShelter {
 
 	public void addToSelectedPets(VirtualPet pet) {
 		selectedPets.add(pet);
-		removeVirtualPetFromShelter(pet);
+		removePetsNotYetSelected(pet);
 	}
 	
 	public void playWithAllPets() {
@@ -97,7 +107,7 @@ public class VirtualPetShelter {
 
 	public String printOrganicPets() {
 		String petList = "";
-		for (VirtualPet pet : shelter.values()) {
+		for (VirtualPet pet : petsNotYetSelected) {
 			if(pet instanceof OrganicPet)
 			petList += pet.getName() + "\n";
 		}
@@ -105,7 +115,7 @@ public class VirtualPetShelter {
 	}
 	public String printRoboticPets() {
 		String petList = "";
-		for (VirtualPet pet : shelter.values()) {
+		for (VirtualPet pet : petsNotYetSelected) {
 			if(pet instanceof RoboticPet)
 			petList += pet.getName() + "\n";
 		}
@@ -113,13 +123,13 @@ public class VirtualPetShelter {
 	}
 
 	public boolean hasOrganic() {
-		for(VirtualPet pet : shelter.values()) {
+		for(VirtualPet pet : petsNotYetSelected) {
 			if(pet instanceof OrganicPet) return true;
 		}
 		return false;
 	}
 	public boolean hasRobotic() {
-		for(VirtualPet pet : shelter.values()) {
+		for(VirtualPet pet : petsNotYetSelected) {
 			if(pet instanceof RoboticPet) return true;
 		}
 		return false;
@@ -137,14 +147,6 @@ public class VirtualPetShelter {
 			((RoboticPet)placeHolder).repair();
 		}
 		
-	}
-
-	public void returnPetsToShelter() {
-		for(VirtualPet placeHolder : selectedPets) {
-			shelter.put(placeHolder.getName(), placeHolder);
-			selectedPets.remove(placeHolder);
-			System.out.println(placeHolder.getName());
-		}
 	}
 
 }
