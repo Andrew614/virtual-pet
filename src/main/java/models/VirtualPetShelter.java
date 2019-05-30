@@ -40,7 +40,7 @@ public class VirtualPetShelter {
 	public String printAllPets() {
 		String petList = "";
 		for (VirtualPet pet : shelter.values()) {
-			petList += pet.getName() + "\n";
+			petList += pet.getName() + "   " + getPetType(pet) + "\n";
 		}
 		return petList;
 	}
@@ -58,6 +58,7 @@ public class VirtualPetShelter {
 			return "OrganicPet";
 		if (pet instanceof RoboticPet)
 			return "RoboticPet";
+		
 		return "";
 
 	}
@@ -72,5 +73,70 @@ public class VirtualPetShelter {
 			placeHolder.play();
 		}
 	}
-	
+
+	public void walkAllPets() {
+		for(VirtualPet placeHolder : selectedPets) {
+			placeHolder.walk();
+		}
+		
+	}
+
+	public void feedAllPets() {
+		for(VirtualPet placeHolder : selectedPets) {
+			((OrganicPet)placeHolder).feed();
+		}
+		
+	}
+
+	public void cleanAllPets() {
+		for(VirtualPet placeHolder : selectedPets) {
+			((OrganicPet)placeHolder).clean();
+		}
+		
+	}
+
+	public String printOrganicPets() {
+		String petList = "";
+		for (VirtualPet pet : shelter.values()) {
+			if(pet instanceof OrganicPet)
+			petList += pet.getName() + "\n";
+		}
+		return petList;
+	}
+	public String printRoboticPets() {
+		String petList = "";
+		for (VirtualPet pet : shelter.values()) {
+			if(pet instanceof RoboticPet)
+			petList += pet.getName() + "\n";
+		}
+		return petList;
+	}
+
+	public boolean hasOrganic() {
+		for(VirtualPet pet : shelter.values()) {
+			if(pet instanceof OrganicPet) return true;
+		}
+		return false;
+	}
+	public boolean hasRobotic() {
+		for(VirtualPet pet : shelter.values()) {
+			if(pet instanceof RoboticPet) return true;
+		}
+		return false;
+	}
+
+	public void fuelAllPets() {
+		for(VirtualPet placeHolder : selectedPets) {
+			((RoboticPet)placeHolder).fillTank();
+		}
+		
+	}
+
+	public void repairAllPets() {
+		for(VirtualPet placeHolder : selectedPets) {
+			((RoboticPet)placeHolder).repair();
+		}
+		
+	}
+
 }
