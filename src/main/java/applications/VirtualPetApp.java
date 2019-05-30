@@ -16,6 +16,7 @@ public class VirtualPetApp {
 		Scanner inputScanner = new Scanner(System.in);
 		VirtualPetShelter shelter1 = new VirtualPetShelter();
 		String userChoice;
+		String continueLoop;
 		boolean exitMenu = false;
 
 		System.out.println("Welcome to Virtual Pet!");
@@ -78,22 +79,22 @@ public class VirtualPetApp {
 					System.out.println("Enter \"1\" to walk the pet \n" + "Enter \"2\" to feed the pet \n"
 							+ "Enter \"3\" to clean the pet \n" + "Enter \"4\" to play with the pet \n");
 					String activity = inputScanner.nextLine();
-					if (activity.equals("1") || activity.equals("4")) {
+					if ((activity.equals("1") || activity.equals("4"))) {
 						do {
 							System.out.println("Would you like to interact with other pets? yes/no");
-							userChoice = inputScanner.nextLine().toLowerCase();
+							continueLoop = inputScanner.nextLine().toLowerCase();
 							if (userChoice.equals("yes") && shelter1.getShelterSize() > 0) {
 								System.out.print(shelter1.printAllPets());
 								System.out.println("Select which pet you would like to interact with.");
 								userChoice = inputScanner.nextLine();
 								shelter1.addToSelectedPets(shelter1.getPet(userChoice));
 							}
-						} while (userChoice.equals("yes")||shelter1.getShelterSize()==0);
+						} while (continueLoop.equals("yes")||shelter1.getShelterSize()==0);
 					}
-					if (activity.equals("2") || activity.equals("3")){
+					if ((activity.equals("2") || activity.equals("3"))){
 						do {
 							System.out.println("Would you like to interact with other pets? yes/no");
-							userChoice = inputScanner.nextLine().toLowerCase();
+							continueLoop = inputScanner.nextLine().toLowerCase();
 							if (userChoice.equals("yes") && shelter1.hasOrganic()) {
 								System.out.print(shelter1.printOrganicPets());
 								System.out.println("Select which pet you would like to interact with.");
@@ -101,16 +102,16 @@ public class VirtualPetApp {
 								shelter1.addToSelectedPets(shelter1.getPet(userChoice));
 							}
 							
-						} while (userChoice.equals("yes")&&shelter1.hasOrganic());
+						} while (continueLoop.equals("yes")&&shelter1.hasOrganic());
 					}
 					switch (activity) {
 					case "1":
 						shelter1.walkAllPets();
-						System.out.println("You walk your pet(s) arount the block");
+						System.out.println("You walked your pet(s) around the block");
 						break;
 					case "2":
 						shelter1.feedAllPets();
-						System.out.println("Your pet(s) gobble up the food");
+						System.out.println("Your pet(s) gobbled up the food");
 						break;
 					case "3":
 						shelter1.cleanAllPets();
@@ -118,7 +119,7 @@ public class VirtualPetApp {
 						break;
 					case "4":
 						shelter1.playWithAllPets();
-						System.out.println("You play with your pet(s)");
+						System.out.println("You played with your pet(s)");
 						break;
 					default:
 						System.out.println("Please Enter a valid Menu option!");
@@ -127,22 +128,22 @@ public class VirtualPetApp {
 					System.out.println("Enter \"1\" to walk the pet \n" + "Enter \"2\" to refuel the pet \n"
 							+ "Enter \"3\" to repair the pet \n" + "Enter \"4\" to play with the pet \n");
 					String activity = inputScanner.nextLine();
-					if (activity.equals("1") || activity.equals("4")) {
+					if ((activity.equals("1") || activity.equals("4"))) {
 						do {
 							System.out.println("Would you like to interact with other pets? yes/no");
-							userChoice = inputScanner.nextLine().toLowerCase();
+							continueLoop = inputScanner.nextLine().toLowerCase();
 							if (userChoice.equals("yes") && shelter1.getShelterSize() > 0) {
 								System.out.print(shelter1.printAllPets());
 								System.out.println("Select which pet you would like to interact with.");
 								userChoice = inputScanner.nextLine();
 								shelter1.addToSelectedPets(shelter1.getPet(userChoice));
 							}
-						} while (userChoice.equals("yes")||shelter1.getShelterSize()==0);
+						} while (continueLoop.equals("yes")||shelter1.getShelterSize()==0);
 					}
-					if (activity.equals("2") || activity.equals("3")){
+					if ((activity.equals("2") || activity.equals("3"))){
 						do {
 							System.out.println("Would you like to interact with other pets? yes/no");
-							userChoice = inputScanner.nextLine().toLowerCase();
+							continueLoop = inputScanner.nextLine().toLowerCase();
 							if (userChoice.equals("yes") && shelter1.hasRobotic()) {
 								System.out.print(shelter1.printRoboticPets());
 								System.out.println("Select which pet you would like to interact with.");
@@ -150,7 +151,7 @@ public class VirtualPetApp {
 								shelter1.addToSelectedPets(shelter1.getPet(userChoice));
 							}
 							
-						} while (userChoice.equals("yes")&&shelter1.hasRobotic());
+						} while (continueLoop.equals("yes")&&shelter1.hasRobotic());
 					}
 					switch (activity) {
 					case "1":

@@ -86,9 +86,6 @@ public abstract class OrganicPet extends VirtualPet {
 		soilLevel -= 10;
 		if (soilLevel < 0) {
 			soilLevel = 0;
-		} else if (soilLevel <= 50) {
-			isSoiled = false;
-			System.out.println("Your pet's area is cleaned");
 		}
 
 	}
