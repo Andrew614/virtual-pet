@@ -11,6 +11,7 @@ public abstract class RoboticPet extends VirtualPet {
 	public int getMaintenanceLevel() {
 		return maintenanceLevel;
 	}
+
 	public RoboticPet(String petName) {
 		this.petName = petName;
 	}
@@ -18,7 +19,7 @@ public abstract class RoboticPet extends VirtualPet {
 	public boolean getNeedsMaintenance() {
 		return needsMaintenance;
 	}
-	
+
 	public int getOilLevel() {
 		return oilLevel;
 	}
@@ -27,6 +28,7 @@ public abstract class RoboticPet extends VirtualPet {
 		maintenanceLevel = 0;
 		needsMaintenance = false;
 	}
+
 	public void fillTank() {
 		oilLevel = 0;
 	}
@@ -48,7 +50,7 @@ public abstract class RoboticPet extends VirtualPet {
 		age += 1;
 		if (age < 0) {
 			age = 0;
-		} 
+		}
 		maintenanceLevel += 5;
 		if (maintenanceLevel > 50) {
 			needsMaintenance = true;

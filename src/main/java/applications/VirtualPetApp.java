@@ -75,7 +75,9 @@ public class VirtualPetApp {
 			case "2":
 				shelter1.fillPetsNotYetSelected();
 				System.out.print(shelter1.printPetsNotSelected());
-				System.out.println("Select which pet you would like to interact with.");
+				if(shelter1.getShelterSize()>0) {
+					System.out.println("Select which pet you would like to interact with.");
+				}else System.out.println("You have no pets! Why don't you make one?");
 				userChoice = inputScanner.nextLine();
 				String petType = shelter1.getPetType(shelter1.getPet(userChoice));
 				shelter1.addToSelectedPets(shelter1.getPet(userChoice));
@@ -195,6 +197,7 @@ public class VirtualPetApp {
 			}
 		}
 	}
+
 	public static void addMoreRoboticPets(Scanner inputScanner, VirtualPetShelter shelter1) {
 		String continueLoop = "yes";
 		String userChoice;

@@ -39,10 +39,11 @@ public abstract class OrganicPet extends VirtualPet {
 			thirst = 0;
 		}
 	}
+
 	public void clean() {
 		soilLevel = 0;
 		isSoiled = false;
-		
+
 	}
 
 	@Override
