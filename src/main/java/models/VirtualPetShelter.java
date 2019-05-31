@@ -172,5 +172,6 @@ public class VirtualPetShelter {
             	System.out.printf("%1$-20s %2$10d %3$10d %4$10d %5$10d \n", pet.getName(), ((RoboticPet) pet).getOilLevel(), pet.getBoredom(), ((RoboticPet) pet).getMaintenanceLevel(), pet.getAge());
         }
     }
+	
 }
-
+	

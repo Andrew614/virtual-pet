@@ -66,19 +66,12 @@ public class VirtualPetShelterTest {
 				
 	}
 	@Test
-	public void testName() throws Exception {
-    	System.out.printf("%1$-20s %2$10s %3$10s %4$10s %5$10s \n", "Pet Name", "Hunger Level", "Boredom Level", "Thirst Level", "Age");
-
-	}
-
-
-
-	
-	/*@Test
-	public void canPrintStatusTable() {
+	public void canFillNotSelected() {
 		shelter1.addVitrtualPetToShelter(pet1);
 		shelter1.addVitrtualPetToShelter(pet2);
-		String petListTest = shelter1.printAllPets();
-		assertThat();
-	}*/
+		shelter1.addVitrtualPetToShelter(pet3);
+		shelter1.addVitrtualPetToShelter(pet4);
+		shelter1.fillPetsNotYetSelected();
+		int selectedSize = 
+	}
 }
