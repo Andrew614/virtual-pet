@@ -7,15 +7,15 @@ public abstract class VirtualPet {
 	protected int age = 0;
 	protected boolean isAlive = true;
 	protected boolean ranAway = false;
-	
+
 	public boolean getRanAway() {
 		return ranAway;
 	}
-	
+
 	public boolean getIsAlive() {
 		return isAlive;
 	}
-	
+
 	public int getAge() {
 		return age;
 	}
@@ -34,9 +34,9 @@ public abstract class VirtualPet {
 	}
 
 	public abstract void tick();
-		
+
 	public abstract void walk();
-	
+
 	public void play() {
 		boredom -= 10;
 		if (boredom < 0) {
@@ -48,4 +48,5 @@ public abstract class VirtualPet {
 
 	}
 
+	public abstract String makeSound();
 }

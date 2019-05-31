@@ -1,15 +1,13 @@
 package roboticPets;
 
-import interfaces.Dog;
-
-public class RoboticDog extends RoboticPet implements Dog{
+public class RoboticDog extends RoboticPet{
 
 	public RoboticDog(String petName) {
 		super(petName);
 	}
 	
 	@Override
-	public String bark() {
+	public String makeSound() {
 		return "Bark";
 	}
 }
