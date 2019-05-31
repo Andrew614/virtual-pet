@@ -71,8 +71,48 @@ public class VirtualPetShelterTest {
 
 	}
 
+	@Test
+	public void shouldReturnTrueIfShelterContainsKendrick() {
+		shelter1.addVitrtualPetToShelter(pet1);
+		assertThat(shelter1.shelterContainsName("Kendrick"), is(true));
+	}
+	
+	@Test
+	public void shouldReturnFalseIfShelterDoesNotContainKendrick() {
+		shelter1.addVitrtualPetToShelter(pet2);
+		shelter1.shelterContainsName(pet1.getName());
+		assertThat(shelter1.shelterContainsName("Kendrick"), is(false));
+	}
 
-
+	@Test
+	public void shouldReturnStringContainingKendrick() {
+		shelter1.addVitrtualPetToShelter(pet1);
+		shelter1.printAllPets();
+		assertThat(shelter1.printAllPets(), is("Kendrick\n"));
+	}
+	
+	@Test
+	public void shouldReturnStringContainingKendrickAndFooFoo() {
+		shelter1.addVitrtualPetToShelter(pet1);
+		shelter1.addVitrtualPetToShelter(pet2);
+		assertThat(shelter1.printAllPets(), is("Foo Foo\nKendrick\n"));
+	}
+	
+	@Test
+	public void shouldReturnMaintenanceLevelOf0WhenRoboticPetIsRepaired() {
+		shelter1.addVitrtualPetToShelter(pet3);
+		shelter1.repairAllPets();
+		assertThat(pet3.getMaintenanceLevel(), is(0));
+	}
+	
+	@Test
+	public void shouldReturnMaintenanceLevelOf0WhenRoboticPetsIsRepaired() {
+		shelter1.addVitrtualPetToShelter(pet3);
+		shelter1.addVitrtualPetToShelter(pet4);
+		shelter1.repairAllPets();
+		assertThat(pet3.getMaintenanceLevel(), is(0));
+		assertThat(pet4.getMaintenanceLevel(), is(0));
+	}
 	
 	/*@Test
 	public void canPrintStatusTable() {

@@ -161,6 +161,11 @@ public class OrganicCatTest {
 		assertThat(isAlive, is(false));
 	}
 	
+	@Test
+	public void shouldMakeSoundOfMeow() {
+		OrganicCat underTest = new OrganicCat("Jeff");
+		assertThat(underTest.makeSound(), is("Meow"));
+	}
 
 	
 }

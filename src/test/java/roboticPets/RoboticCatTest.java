@@ -54,7 +54,7 @@ public class RoboticCatTest {
 	@Test
 	public void catCanmakeSound() {
 		String makeSound = underTest.makeSound();
-		assertThat(makeSound, is("makeSound"));
+		assertThat(makeSound, is("Meow"));
 	}
 	@Test
 	public void willRunAwayWhenBoredomIsGreaterThan100() {

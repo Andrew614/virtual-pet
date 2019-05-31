@@ -188,6 +188,8 @@ public class OrganicDogTest {
 		boolean isAlive = pet.getIsAlive();
 		assertThat(isAlive, is(false));
 	}
+	
+	@Test
 	public void shouldNotDieAtAge99() {
 		OrganicDog pet = new OrganicDog("Kendrick");
 		for (int i = 0; i < 99; i++) {
@@ -198,5 +200,10 @@ public class OrganicDogTest {
 		assertThat(isAlive, is(true));
 	}
 	
+	@Test
+	public void shouldReturnWoofWoofWhenMakeSound() {
+		OrganicDog pet = new OrganicDog("Kendrick");
+		assertThat(pet.makeSound(), is("Woof Woof"));
+	}
 	
 }

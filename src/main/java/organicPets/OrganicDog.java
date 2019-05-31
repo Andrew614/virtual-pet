@@ -11,6 +11,4 @@ public class OrganicDog extends OrganicPet{
 		return "Woof Woof";
 	}
 
-	
-
 }
