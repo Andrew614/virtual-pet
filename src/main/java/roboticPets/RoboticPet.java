@@ -33,13 +33,13 @@ public abstract class RoboticPet extends VirtualPet {
 
 	@Override
 	public void tick() {
-		oilLevel += 10;
+		oilLevel += 5;
 		if (oilLevel < 0) {
 			oilLevel = 0;
 		} else if (oilLevel > 100) {
 			isAlive = false;
 		}
-		boredom += 10;
+		boredom += 5;
 		if (boredom < 0) {
 			boredom = 0;
 		} else if (boredom > 100) {
@@ -49,7 +49,7 @@ public abstract class RoboticPet extends VirtualPet {
 		if (age < 0) {
 			age = 0;
 		} 
-		maintenanceLevel += 10;
+		maintenanceLevel += 5;
 		if (maintenanceLevel > 50) {
 			needsMaintenance = true;
 			System.out.println("Your pet needs maintenance");

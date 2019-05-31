@@ -35,6 +35,10 @@ public class VirtualPetShelter {
 			petsNotYetSelected.add(placeHolder);
 		}
 	}
+	public void clearPetArraylists() {
+		petsNotYetSelected.clear();
+		selectedPets.clear();
+	}
 
 	public String getNameFromList(VirtualPet pet) {
 		// VirtualPet petFromMap = shelter.get(pet.getName());
@@ -51,6 +55,25 @@ public class VirtualPetShelter {
 			petList += pet.getName() + "   " + getPetType(pet) + "\n";
 		}
 		return petList;
+	}
+	public String printOrganicPetsNotSelected() {
+		String petList = "";
+		for (VirtualPet pet : petsNotYetSelected) {
+			if(pet instanceof OrganicPet)
+			petList += pet.getName() + "   " + getPetType(pet) + "\n";
+		}
+		return petList;
+	}
+	public String printRoboticPetsNotSelected() {
+		String petList = "";
+		for (VirtualPet pet : petsNotYetSelected) {
+			if(pet instanceof RoboticPet)
+			petList += pet.getName() + "   " + getPetType(pet) + "\n";
+		}
+		return petList;
+	}
+	public int getPetsNotSelectedSize() {
+		return petsNotYetSelected.size();
 	}
 
 	public void removeDeadPets() {
@@ -75,7 +98,14 @@ public class VirtualPetShelter {
 		selectedPets.add(pet);
 		removePetsNotYetSelected(pet);
 	}
-	
+	public void tickAllPets() {
+		for(VirtualPet placeHolder : shelter.values()) {
+			placeHolder.tick();
+		}
+		/*for(VirtualPet placeHolder : petsNotYetSelected) {
+			placeHolder.tick();
+		}*/
+	}
 	public void playWithAllPets() {
 		for(VirtualPet placeHolder : selectedPets) {
 			placeHolder.play();
@@ -91,6 +121,7 @@ public class VirtualPetShelter {
 
 	public void feedAllPets() {
 		for(VirtualPet placeHolder : selectedPets) {
+			if(placeHolder instanceof OrganicPet)
 			((OrganicPet)placeHolder).feed();
 		}
 		
@@ -98,6 +129,7 @@ public class VirtualPetShelter {
 
 	public void cleanAllPets() {
 		for(VirtualPet placeHolder : selectedPets) {
+			if(placeHolder instanceof OrganicPet)
 			((OrganicPet)placeHolder).clean();
 		}
 		
@@ -106,7 +138,7 @@ public class VirtualPetShelter {
 	public String printOrganicPets() {
 		String petList = "";
 		for (VirtualPet pet : petsNotYetSelected) {
-			if(pet instanceof OrganicPet)
+			if(pet instanceof OrganicPet&&pet.getIsAlive()&&!pet.getRanAway())
 			petList += pet.getName() + "\n";
 		}
 		return petList;
@@ -114,7 +146,7 @@ public class VirtualPetShelter {
 	public String printRoboticPets() {
 		String petList = "";
 		for (VirtualPet pet : petsNotYetSelected) {
-			if(pet instanceof RoboticPet)
+			if(pet instanceof RoboticPet&&pet.getIsAlive()&&!pet.getRanAway())
 			petList += pet.getName() + "\n";
 		}
 		return petList;
@@ -126,6 +158,7 @@ public class VirtualPetShelter {
 		}
 		return false;
 	}
+	
 	public boolean hasRobotic() {
 		for(VirtualPet pet : petsNotYetSelected) {
 			if(pet instanceof RoboticPet) return true;
@@ -135,6 +168,7 @@ public class VirtualPetShelter {
 
 	public void fuelAllPets() {
 		for(VirtualPet placeHolder : selectedPets) {
+			if(placeHolder instanceof RoboticPet)
 			((RoboticPet)placeHolder).fillTank();
 		}
 		
@@ -142,6 +176,7 @@ public class VirtualPetShelter {
 
 	public void repairAllPets() {
 		for(VirtualPet placeHolder : selectedPets) {
+			if(placeHolder instanceof RoboticPet)
 			((RoboticPet)placeHolder).repair();
 		}
 		
@@ -161,14 +196,14 @@ public class VirtualPetShelter {
 	public void organicPrintStatus() {
     	System.out.printf("\n%1$-20s %2$10s %3$10s %4$10s %5$10s \n", "Organic Pet Name", "Hunger", "Boredom", "Thirst", "Age");
 		for(VirtualPet pet: shelter.values()) {
-            if (pet instanceof OrganicPet)
+            if (pet instanceof OrganicPet&&pet.getIsAlive()&&!pet.getRanAway())
             	System.out.printf("%1$-20s %2$10d %3$10d %4$10d %5$10d \n", pet.getName(), ((OrganicPet) pet).getHunger(), pet.getBoredom(), ((OrganicPet) pet).getThirst(), pet.getAge());
         }
     }
 	public void roboticPrintStatus() {
     	System.out.printf("\n%1$-20s %2$10s %3$10s %4$10s %5$10s \n", "Robotic Pet Name", "Oil", "Boredom", "Mainteneance", "Age");
 		for(VirtualPet pet: shelter.values()) {
-            if (pet instanceof RoboticPet)
+            if (pet instanceof RoboticPet&&pet.getIsAlive()&&!pet.getRanAway())
             	System.out.printf("%1$-20s %2$10d %3$10d %4$10d %5$10d \n", pet.getName(), ((RoboticPet) pet).getOilLevel(), pet.getBoredom(), ((RoboticPet) pet).getMaintenanceLevel(), pet.getAge());
         }
     }
