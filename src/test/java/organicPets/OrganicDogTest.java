@@ -9,7 +9,6 @@ import org.junit.Test;
 import organicPets.OrganicDog;
 
 public class OrganicDogTest {
-	
 
 	@Test
 	public void petShouldHaveName() {
@@ -124,16 +123,19 @@ public class OrganicDogTest {
 		assertEquals(0, hungerAfterTick);
 		assertEquals(0, thirstAfterTick);
 	}
-	@Test 
+
+	@Test
 	public void soilLevelIsAlwaysGreaterThan0() {
 		OrganicDog pet = new OrganicDog("Kendrick");
 		for (int i = 0; i < 2; i++) {
-			pet.walk();;
+			pet.walk();
+			;
 		}
 		int soilLevelAfterWalk = pet.getSoilLevel();
 		assertThat(soilLevelAfterWalk, is(0));
 	}
-	@Test 
+
+	@Test
 	public void soiledShouldBeTrueWhenSoilLevelGreaterThan50() {
 		OrganicDog pet = new OrganicDog("Kendrick");
 		for (int i = 0; i < 6; i++) {
@@ -142,6 +144,7 @@ public class OrganicDogTest {
 		boolean soiledAfterTick = pet.getSoiled();
 		assertThat(soiledAfterTick, is(true));
 	}
+
 	@Test
 	public void willRunAwayWhenBoredomIsGreaterThan100() {
 		OrganicDog pet = new OrganicDog("Kendrick");
@@ -151,6 +154,7 @@ public class OrganicDogTest {
 		boolean hasRunAway = pet.getRanAway();
 		assertThat(hasRunAway, is(true));
 	}
+
 	@Test
 	public void organicDogWillDieAfter10Ticks() {
 		OrganicDog pet = new OrganicDog("Kendrick");
@@ -160,7 +164,7 @@ public class OrganicDogTest {
 		boolean isAlive = pet.getIsAlive();
 		assertThat(isAlive, is(false));
 	}
-	
+
 	@Test
 	public void shouldHaveSoilLevel0AfterClensing() {
 		OrganicDog pet = new OrganicDog("Kendrick");
@@ -171,6 +175,7 @@ public class OrganicDogTest {
 		assertThat(soilLevel, is(0));
 		assertThat(isSoiled, is(false));
 	}
+
 	@Test
 	public void shouldHaveAge1After1Tick() {
 		OrganicDog pet = new OrganicDog("Kendrick");
@@ -178,6 +183,7 @@ public class OrganicDogTest {
 		int age = pet.getAge();
 		assertThat(age, is(1));
 	}
+
 	@Test
 	public void shouldDieAtAge100() {
 		OrganicDog pet = new OrganicDog("Kendrick");
@@ -188,6 +194,7 @@ public class OrganicDogTest {
 		boolean isAlive = pet.getIsAlive();
 		assertThat(isAlive, is(false));
 	}
+
 	public void shouldNotDieAtAge99() {
 		OrganicDog pet = new OrganicDog("Kendrick");
 		for (int i = 0; i < 99; i++) {
@@ -197,6 +204,5 @@ public class OrganicDogTest {
 		boolean isAlive = pet.getIsAlive();
 		assertThat(isAlive, is(true));
 	}
-	
-	
+
 }

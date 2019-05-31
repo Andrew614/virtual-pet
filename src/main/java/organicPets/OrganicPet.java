@@ -39,27 +39,28 @@ public abstract class OrganicPet extends VirtualPet {
 			thirst = 0;
 		}
 	}
+
 	public void clean() {
 		soilLevel = 0;
 		isSoiled = false;
-		
+
 	}
 
 	@Override
 	public void tick() {
-		hunger += 10;
+		hunger += 5;
 		if (hunger < 0) {
 			hunger = 0;
 		} else if (hunger > 100) {
 			isAlive = false;
 		}
-		thirst += 10;
+		thirst += 5;
 		if (thirst < 0) {
 			thirst = 0;
 		} else if (thirst > 100) {
 			isAlive = false;
 		}
-		boredom += 10;
+		boredom += 5;
 		if (boredom < 0) {
 			boredom = 0;
 		} else if (boredom > 100) {

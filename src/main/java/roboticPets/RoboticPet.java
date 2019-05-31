@@ -11,6 +11,7 @@ public abstract class RoboticPet extends VirtualPet {
 	public int getMaintenanceLevel() {
 		return maintenanceLevel;
 	}
+
 	public RoboticPet(String petName) {
 		this.petName = petName;
 	}
@@ -18,7 +19,7 @@ public abstract class RoboticPet extends VirtualPet {
 	public boolean getNeedsMaintenance() {
 		return needsMaintenance;
 	}
-	
+
 	public int getOilLevel() {
 		return oilLevel;
 	}
@@ -27,19 +28,20 @@ public abstract class RoboticPet extends VirtualPet {
 		maintenanceLevel = 0;
 		needsMaintenance = false;
 	}
+
 	public void fillTank() {
 		oilLevel = 0;
 	}
 
 	@Override
 	public void tick() {
-		oilLevel += 10;
+		oilLevel += 5;
 		if (oilLevel < 0) {
 			oilLevel = 0;
 		} else if (oilLevel > 100) {
 			isAlive = false;
 		}
-		boredom += 10;
+		boredom += 5;
 		if (boredom < 0) {
 			boredom = 0;
 		} else if (boredom > 100) {
@@ -48,8 +50,8 @@ public abstract class RoboticPet extends VirtualPet {
 		age += 1;
 		if (age < 0) {
 			age = 0;
-		} 
-		maintenanceLevel += 10;
+		}
+		maintenanceLevel += 5;
 		if (maintenanceLevel > 50) {
 			needsMaintenance = true;
 			System.out.println("Your pet needs maintenance");
